@@ -79,7 +79,7 @@ fun MyApp() {
                         }
                     )
                 }) {
-                    BodyContent(navController, Modifier.padding(it))
+                    BodyContent(navController)
                 }
             }
         }
@@ -92,7 +92,7 @@ fun MyApp() {
                         }
                     )
                 }) {
-                    DetailContent(navController)
+                    DetailContent()
                 }
             }
 
@@ -103,7 +103,7 @@ fun MyApp() {
 private var mAnimal: Animal? = null
 
 @Composable
-fun DetailContent(navController: NavController, modifier: Modifier = Modifier) {
+fun DetailContent() {
 
     val animal = mAnimal ?: return
 
@@ -160,8 +160,7 @@ fun DetailContent(navController: NavController, modifier: Modifier = Modifier) {
 
 @Composable
 fun BodyContent(
-    navController: NavController,
-    modifier: Modifier = Modifier
+    navController: NavController
 ) {
     val list = mutableListOf<Animal>()
     list.add(
